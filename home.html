@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux Anniversaire Nadia 💙</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400&display=swap');
+
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(-45deg, #000033, #000055, #001166, #00aaff);
+        background-size: 400% 400%;
+        animation: gradientBG 20s ease infinite;
+    }
+
+    /* Titre avec Glow bleu léger */
+    h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 4rem;
+        background: linear-gradient(45deg, #00aaff, #66ccff, #99ddff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 2px #000;
+        animation: glowPulse 3s infinite alternate, fadeIn 2s ease-in-out;
+        letter-spacing: 2px;
+    }
+
+    @keyframes glowPulse {
+        0% {
+            text-shadow: 2px 2px 2px #000, 0 0 5px #00aaff, 0 0 10px #66ccff;
+        }
+        50% {
+            text-shadow: 2px 2px 2px #000, 0 0 15px #00aaff, 0 0 25px #66ccff;
+        }
+        100% {
+            text-shadow: 2px 2px 2px #000, 0 0 5px #00aaff, 0 0 10px #66ccff;
+        }
+    }
+
+    /* Texte */
+    p {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        max-width: 80%;
+        line-height: 1.5;
+        background: linear-gradient(45deg, #66ccff, #99ddff, #cceeff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Cœurs flottants */
+    .heart {
+        font-size: 2rem;
+        position: absolute;
+        animation: floatHeart 5s linear infinite;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes floatHeart {
+        0% {top: 100%; transform: translateX(0) scale(1); opacity: 1;}
+        50% {transform: translateX(50px) scale(1.3); opacity: 0.8;}
+        100% {top: -10%; transform: translateX(-50px) scale(0.5); opacity: 0;}
+    }
+
+    @keyframes gradientBG {
+        0% {background-position:0% 50%;}
+        50% {background-position:100% 50%;}
+        100% {background-position:0% 50%;}
+    }
+
+</style>
+</head>
+<body>
+
+    <h1>Joyeux 25ème <br> Anniversaire Nadia 💙</h1>
+
+    <p>
+        Cette page est faite juste pour toi.<br>
+        Un petit moment rempli de chaleur, d'amour et de mots venant du cœur.<br>
+        <strong>Une longue vie pleine de joie.</strong>
+    </p>
+
+    <!-- Cœurs flottants -->
+    <div class="heart" style="left: 10%; font-size:2rem;">💙</div>
+    <div class="heart" style="left: 25%; font-size:2.5rem; animation-delay: 1s;">💙</div>
+    <div class="heart" style="left: 40%; font-size:3rem; animation-delay: 2s;">💙</div>
+    <div class="heart" style="left: 55%; font-size:2rem; animation-delay: 1.5s;">💙</div>
+    <div class="heart" style="left: 70%; font-size:2.8rem; animation-delay: 2.5s;">💙</div>
+    <div class="heart" style="left: 85%; font-size:2rem; animation-delay: 3s;">💙</div>
+
+</body>
+</html>
