@@ -1,106 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joyeux Anniversaire Nadia 💙</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400&display=swap');
-
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        height: 100vh;
-        text-align: center;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(-45deg, #000033, #000055, #001166, #00aaff);
-        background-size: 400% 400%;
-        animation: gradientBG 20s ease infinite;
-    }
-
-    /* Titre avec Glow bleu léger */
-    h1 {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 4rem;
-        background: linear-gradient(45deg, #00aaff, #66ccff, #99ddff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 2px 2px 2px #000;
-        animation: glowPulse 3s infinite alternate, fadeIn 2s ease-in-out;
-        letter-spacing: 2px;
-    }
-
-    @keyframes glowPulse {
-        0% {
-            text-shadow: 2px 2px 2px #000, 0 0 5px #00aaff, 0 0 10px #66ccff;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omar'y – 3 Days Left</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-        50% {
-            text-shadow: 2px 2px 2px #000, 0 0 15px #00aaff, 0 0 25px #66ccff;
+
+        h1 {
+            color: #FF7A00;
+            font-size: 2.5rem;
+            margin-top: 60px;
         }
-        100% {
-            text-shadow: 2px 2px 2px #000, 0 0 5px #00aaff, 0 0 10px #66ccff;
+
+        .circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #FF7A00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            font-size: 2rem;
+            color: #FF7A00;
+            box-shadow: 0 0 15px rgba(255, 122, 0, 0.5);
         }
-    }
 
-    /* Texte */
-    p {
-        margin-top: 20px;
-        font-size: 1.5rem;
-        max-width: 80%;
-        line-height: 1.5;
-        background: linear-gradient(45deg, #66ccff, #99ddff, #cceeff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: fadeIn 3s ease-in-out;
-    }
+        .message {
+            width: 85%;
+            margin: 30px auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
 
-    /* Cœurs flottants */
-    .heart {
-        font-size: 2rem;
-        position: absolute;
-        animation: floatHeart 5s linear infinite;
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    @keyframes fadeIn {
-        from {opacity: 0; transform: translateY(20px);}
-        to {opacity: 1; transform: translateY(0);}
-    }
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            background: #FF7A00;
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 12px rgba(255, 122, 0, 0.4);
+        }
 
-    @keyframes floatHeart {
-        0% {top: 100%; transform: translateX(0) scale(1); opacity: 1;}
-        50% {transform: translateX(50px) scale(1.3); opacity: 0.8;}
-        100% {top: -10%; transform: translateX(-50px) scale(0.5); opacity: 0;}
-    }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
 
-    @keyframes gradientBG {
-        0% {background-position:0% 50%;}
-        50% {background-position:100% 50%;}
-        100% {background-position:0% 50%;}
-    }
+        .popup-content {
+            background: #111;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            color: #FF7A00;
+            font-size: 1.1rem;
+            box-shadow: 0 0 12px rgba(255, 122, 0, 0.5);
+            animation: fadeIn 1s;
+        }
 
-</style>
+        .footer {
+            margin-top: 40px;
+            color: #FF7A00;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            padding-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
+    <h1>3 jours restants… 🎂</h1>
 
-    <h1>Joyeux 25ème <br> Anniversaire Nadia 💙</h1>
+    <div class="circle">3</div>
 
-    <p>
-        Cette page est faite juste pour toi.<br>
-        Un petit moment rempli de chaleur, d'amour et de mots venant du cœur.<br>
-        <strong>Une longue vie pleine de joie.</strong>
-    </p>
+    <div class="message">
+        Chaque jour qui passe… je me rends compte que je t’aime plus. <br>
+        Attends ton anniversaire… j’ai une surprise pour toi Omar’y 🧡
+    </div>
 
-    <!-- Cœurs flottants -->
-    <div class="heart" style="left: 10%; font-size:2rem;">💙</div>
-    <div class="heart" style="left: 25%; font-size:2.5rem; animation-delay: 1s;">💙</div>
-    <div class="heart" style="left: 40%; font-size:3rem; animation-delay: 2s;">💙</div>
-    <div class="heart" style="left: 55%; font-size:2rem; animation-delay: 1.5s;">💙</div>
-    <div class="heart" style="left: 70%; font-size:2.8rem; animation-delay: 2.5s;">💙</div>
-    <div class="heart" style="left: 85%; font-size:2rem; animation-delay: 3s;">💙</div>
+    <button onclick="showPopup()">Taper pour un message</button>
 
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            Le meilleur reste à venir… 3 jours et je te fête à ma façon 🔥🧡
+            "Ohibok"
+        </div>
+    </div>
+
+    <div class="footer">Made with love by your wifey🧡</div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'flex';
+            setTimeout(() => {
+                document.getElementById('popup').style.display = 'none';
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
