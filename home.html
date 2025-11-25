@@ -1,126 +1,188 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omar'y – 1 Day Left</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Omar’y</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a0a00, #ff7b00);
+    background-size: 300% 300%;
+    animation: bgMove 12s infinite alternate ease-in-out;
+    color:#ff8c00;
+    text-align:center;
+    min-height:100vh;
+  }
+  @keyframes bgMove{
+    0%{background-position:0% 50%;}
+    100%{background-position:100% 50%;}
+  }
 
-        h1 {
-            color: #FF7A00;
-            font-size: 2.5rem;
-            margin-top: 60px;
-        }
+  .page{
+    display:none;
+    padding:50px 20px;
+  }
+  .active{ display:block; }
 
-        .circle {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid #FF7A00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 30px auto;
-            font-size: 2rem;
-            color: #FF7A00;
-            box-shadow: 0 0 15px rgba(255, 122, 0, 0.5);
-        }
+  h1{
+    font-family:'Pacifico','Poppins',sans-serif;
+    font-size:2.8rem;
+    font-weight:700;
+    background:linear-gradient(90deg,orange,#ffba5c,#ff7b00);
+    -webkit-background-clip:text;
+    color:transparent;
+    text-shadow:0 0 15px black;
+    letter-spacing:2px;
+  }
 
-        .message {
-            width: 85%;
-            margin: 30px auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
+  p{
+    font-size:1.2rem;
+    font-weight:500;
+    margin:15px 0 25px 0;
+  }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+  .nextBtn{
+    padding:10px 25px;
+    font-size:1.5rem;
+    font-family:'Pacifico',sans-serif;
+    color:#ff8c00;
+    background:transparent;
+    border:2px solid #ff8c00;
+    border-radius:12px;
+    cursor:pointer;
+    animation:btnBounce 1.3s infinite, glow 2s infinite alternate;
+  }
 
-        button {
-            margin-top: 25px;
-            padding: 12px 25px;
-            font-size: 1rem;
-            background: #FF7A00;
-            color: #000;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            box-shadow: 0 0 12px rgba(255, 122, 0, 0.4);
-        }
+  @keyframes btnBounce{
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-5px); }
+  }
 
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
+  @keyframes glow{
+    0%{ box-shadow:0 0 5px #ff8c00,0 0 10px #ff8c00,0 0 15px #ff7b00;}
+    50%{ box-shadow:0 0 10px #ffcc66,0 0 20px #ffcc66,0 0 25px #ffcc66;}
+    100%{ box-shadow:0 0 5px #ff8c00,0 0 10px #ff8c00,0 0 15px #ff7b00;}
+  }
 
-        .popup-content {
-            background: #111;
-            padding: 20px;
-            border-radius: 15px;
-            width: 80%;
-            color: #FF7A00;
-            font-size: 1.1rem;
-            box-shadow: 0 0 12px rgba(255, 122, 0, 0.5);
-            animation: fadeIn 1s;
-        }
+  img{
+    max-width:85%;
+    border-radius:12px;
+    box-shadow:0 0 10px #ff8c00;
+    margin-bottom:25px;
+  }
 
-        .footer {
-            margin-top: 40px;
-            color: #FF7A00;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            padding-bottom: 30px;
-        }
-    </style>
+  .heart {
+    position:absolute;
+    font-size:2.8rem;
+    cursor:pointer;
+    user-select:none;
+    animation: floatUp 5s linear infinite;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(60vh) scale(1); opacity:1; }
+    to { transform: translateY(-20vh) scale(1.3); opacity:0; }
+  }
+
+  .confetti{
+    position:absolute;
+    width:10px; height:10px;
+    background: #ff8c00;
+    top:0; left:0;
+    pointer-events:none;
+    opacity:0.9;
+    border-radius:3px;
+    animation: fall 3s linear forwards;
+  }
+
+  @keyframes fall{
+    to{ transform: translateY(600px) rotate(360deg); opacity:0; }
+  }
+
+</style>
 </head>
 <body>
-    <h1>1 jour restant… 🎂</h1>
 
-    <div class="circle">1</div>
+<!-- PAGE 1 -->
+<div id="p1" class="page active">
+  <h1>Happy Birthday Omar’y ❤️</h1>
+  <p>Today is your day… full of love, joy, and surprises just for you.Allah ytowel omrek habiby</p>
+  <button class="nextBtn" onclick="goTo('p2')">Next</button>
+</div>
 
-    <div class="message">
-        Chaque jour qui passe… je me rends compte que je t’aime plus. <br>
-        Attends ton anniversaire… j’ai une surprise pour toi Omar’y 🧡
-    </div>
+<!-- PAGE 2 -->
+<div id="p2" class="page">
+  <h1>Us ❤️</h1>
+  <img src="1.jpeg" alt="Us">
+  <p>You and I - Ilheme Derdour & Omar Abbassa … my favorite story ever, Omar’y. Every moment with you is love in its purest form. I think it's our fav picture </p>
+  <button class="nextBtn" onclick="goTo('p3')">Next</button>
+</div>
 
-    <button onclick="showPopup()">Taper pour un message</button>
+<!-- PAGE 3 (Emoji Heart Game) -->
+<div id="p3" class="page">
+  <h1>Catch the Hearts ❤️</h1>
+  <p>Catch all 3 hearts to unlock a secret message!</p>
+  <button class="nextBtn" onclick="goTo('p4')">Next</button>
+</div>
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            Le meilleur reste à venir… 1 jour et je te fête à ma façon 🔥🧡
-            "Ohibok"
-        </div>
-    </div>
+<!-- PAGE 4 -->
+<div id="p4" class="page">
+  <h1>My Wishes for You ❤️</h1>
+  <p>
+    Allah yhefedk, ykamel wch metmny, yfarek, yje3l l baraka fi trigek tjr, 
+    Allah yba3ed elik wlad lhram w y9areblk lkhir inshallah  
+    <br><br>
+     Rani dayemn m3k mahma ykon, lyoum w ghodwa f deniya w f ljenna inshallah. 
+     Ohibok 2 fois ❤️
+  </p>
+</div>
 
-    <div class="footer">Made with love by your wifey🧡</div>
+<script>
+  function goTo(id){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    if(id==='p3'){ generateHearts(); }
+  }
 
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'flex';
-            setTimeout(() => {
-                document.getElementById('popup').style.display = 'none';
-            }, 3000);
+  let found = 0;
+  function generateHearts(){
+    found=0;
+    document.querySelectorAll('#p3 .heart').forEach(h=>h.remove());
+    for(let i=0;i<3;i++){
+      let heart = document.createElement("div");
+      heart.className="heart";
+      heart.innerHTML="❤️";
+      heart.style.left=Math.random()*70+10+"%";
+      heart.style.top="60vh";
+      heart.onclick=function(){
+        heart.remove();
+        found++;
+        if(found===3){
+          setTimeout(()=>{
+            alert("You caught all the hearts… but mine is yours forever ❤️😂");
+            launchConfetti();
+          },300);
         }
-    </script>
+      };
+      document.getElementById("p3").appendChild(heart);
+    }
+  }
+
+  function launchConfetti(){
+    for(let i=0;i<100;i++){
+      let c=document.createElement("div");
+      c.className="confetti";
+      c.style.left=Math.random()*window.innerWidth+"px";
+      c.style.background=["#ff8c00","#ffba5c","#ffcc66"][Math.floor(Math.random()*3)];
+      document.body.appendChild(c);
+      setTimeout(()=>{ c.remove(); },3000);
+    }
+  }
+</script>
+
 </body>
 </html>
 
