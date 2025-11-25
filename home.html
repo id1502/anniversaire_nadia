@@ -125,6 +125,7 @@
 <div id="p3" class="page">
   <h1>Catch the Hearts ❤️</h1>
   <p>Catch all 3 hearts to unlock a secret message!</p>
+  <div id="heartMessage" style="margin-top:20px; font-size:1.3rem; font-weight:600; color:#ff4444;"></div>
   <button class="nextBtn" onclick="goTo('p4')">Next</button>
 </div>
 
@@ -146,25 +147,24 @@
     document.getElementById(id).classList.add('active');
     if(id==='p3'){ generateHearts(); }
   }
-
   let found = 0;
   function generateHearts(){
     found=0;
+    document.getElementById('heartMessage').innerText = ""; // نظف الرسالة قبل البدء
     document.querySelectorAll('#p3 .heart').forEach(h=>h.remove());
     for(let i=0;i<3;i++){
       let heart = document.createElement("div");
       heart.className="heart";
-      heart.innerHTML="❤️";
+      heart.innerHTML="❤️"; 
       heart.style.left=Math.random()*70+10+"%";
       heart.style.top="60vh";
       heart.onclick=function(){
         heart.remove();
         found++;
         if(found===3){
-          setTimeout(()=>{
-            alert("You caught all the hearts… but mine is yours forever ❤️😂");
-            launchConfetti();
-          },300);
+          // عرض الرسالة مباشرة داخل الصفحة
+          document.getElementById('heartMessage').innerText = "You caught all the hearts… but mine is yours forever ❤️😂";
+          launchConfetti();
         }
       };
       document.getElementById("p3").appendChild(heart);
@@ -185,6 +185,5 @@
 
 </body>
 </html>
-
 
 
